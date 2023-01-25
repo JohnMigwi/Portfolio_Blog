@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import  { PostCard,Categories,PostWidget } from '../components';
 
 const posts = [
-  { title:'React Testing', excerpt: '  learn React Testing' },
-  { title:'React with Tailwind', excerpt: '  learn React with Tailwind' },
+  { title:'React Testing', excerpt : '  learn React Testing' },
+  { title:'React with Tailwind', excerpt : '  learn React with Tailwind' },
 ];
 
 const Home: NextPage = () => {
@@ -16,11 +17,8 @@ const Home: NextPage = () => {
       </Head>
        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 ">
         <div className='lg:col-span-8 col-span-1'>
-        {posts.map((post, index) =>(
-              <div>
-                {post.title}
-                {post.excerpt}
-              </div>
+        {posts.map((post, index) => (
+            <PostCard post={post} key={post.title}/>
           ))}
         </div>
        <div className="lg:col-span-4 col-span-1">
