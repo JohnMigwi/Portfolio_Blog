@@ -1,10 +1,19 @@
-import '../styles/globals.scss'
+import React,{ useEffect, useState } from 'react';
+import { layout } from '../components';
+import '../styles/globals.scss';
+import type { AppProps } from 'next/app';
+import Layout from '../components/layout';
 
-//import '../styles/globals.scss'
-import type { AppProps } from 'next/app'
+
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return(
+    <Layout>
+      <Component {...pageProps} />
+      </Layout>
+
+  ) 
 }
 
 export default MyApp
